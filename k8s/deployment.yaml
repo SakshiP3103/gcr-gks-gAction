@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: hello-world
-        image: sakshi3112/ingress-demo:v1
+        image: gcr.io/sound-jigsaw-465314-s6/hello-world:latest
         ports:
         - containerPort: 80

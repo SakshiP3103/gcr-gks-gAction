@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: hello-world
-        image: gcr.io/sound-jigsaw-465314-s6/hello-world:latest
+        image: asia-south1-docker.pkg.dev/sound-jigsaw-465314-s6/gcr-gke-poc-repo/hello-world:latest
         ports:
         - containerPort: 80

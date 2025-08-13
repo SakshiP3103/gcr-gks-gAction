@@ -1,4 +1,4 @@
-name: Build & Deploy to GKE (Latest + Commit Tag)
+name: Build & Deploy to GKE 
 
 on:
   push:

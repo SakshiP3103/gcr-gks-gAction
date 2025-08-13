@@ -9,12 +9,12 @@ jobs:
   build-deploy:
     runs-on: ubuntu-latest
     env:
-      PROJECT_ID: sound-jigsaw-465314-s6      # GCP Project ID
-      CLUSTER_NAME: gcr-gke-cluster           # GKE Cluster Name
-      CLUSTER_ZONE: asia-south1-a             # GKE Cluster Zone
-      GAR_LOCATION: asia-south1               # Artifact Registry region
-      REPO_NAME: gcr-gke-poc-repo             # Artifact Registry repository name
-      IMAGE_NAME: hello-world                 # Image name in Artifact Registry
+      PROJECT_ID: sound-jigsaw-465314-s6      
+      CLUSTER_NAME: gcr-gke-cluster           
+      CLUSTER_ZONE: asia-south1-a             
+      GAR_LOCATION: asia-south1               
+      REPO_NAME: gcr-gke-poc-repo             
+      IMAGE_NAME: hello-world                
 
     steps:
       - name: Checkout Code

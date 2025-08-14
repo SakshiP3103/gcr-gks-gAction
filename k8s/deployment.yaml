@@ -14,8 +14,32 @@ spec:
       labels:
         app: hello-world
     spec:
+      serviceAccountName: ksa
       containers:
       - name: hello-world
         image: asia-south1-docker.pkg.dev/sound-jigsaw-465314-s6/gcr-gke-poc-repo/hello-world:latest
+        imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 80
+        resources:
+          requests:
+            cpu: "100m"
+            memory: "128Mi"
+          limits:
+            cpu: "500m"
+            memory: "256Mi"
+        stdin: true
+        stdinOnce: true
+        tty: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        volumeMounts:
+        - mountPath: "/var/secrets"
+          name: mysecret
+      volumes:
+      - name: mysecret
+        csi:
+          driver: secrets-store-gke.csi.k8s.io
+          readOnly: true
+          volumeAttributes:
+            secretProviderClass: secret-provider-class
